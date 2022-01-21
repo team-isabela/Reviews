@@ -4,22 +4,22 @@ import { Counter } from 'k6/metrics';
 
 export const requests = new Counter('http_reqs');
 
-// export const options = {
-//   vus: 100,
-//   duration: '60s',
-// };
-
 export const options = {
-  stages: [
-    { duration: '10s', target: 1 },
-    { duration: '15s', target: 500 },
-    { duration: '10s', target: 100 },
-    { duration: '10s', target: 1000 },
-    { duration: '10s', target: 100 },
-    { duration: '10s', target: 10 },
-    { duration: '30s', target: 0 },
-  ],
+  vus: 100,
+  duration: '60s',
 };
+
+// export const options = {
+//   stages: [
+//     { duration: '10s', target: 1 },
+//     { duration: '15s', target: 500 },
+//     { duration: '10s', target: 100 },
+//     { duration: '10s', target: 1000 },
+//     { duration: '10s', target: 100 },
+//     { duration: '10s', target: 10 },
+//     { duration: '30s', target: 0 },
+//   ],
+// };
 
 export default function () {
   let id = Math.floor(Math.random() * (1000000 - 1 + 1)) + 1;

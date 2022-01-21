@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = 3000;
-const API = require('../../AuthKey');
+const API = require('../config.js');
 
 const db = require('../database/index.js');
 const exp = require('constants');
 
 const headers = {
-  Authorization: API.key,
+  Authorization: API.TOKEN,
   'Content-Type': 'application/json',
 };
 

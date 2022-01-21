@@ -1,17 +1,17 @@
 COPY characteristic_reviews
-FROM '/Users/johnrazi/HackReactor/SDC/data/characteristic_reviews.csv'
+FROM '/Users/johnrazi/HackReactor/data/characteristic_reviews.csv'
 DELIMITER ',' CSV Header;
 
 COPY reviews
-FROM '/Users/johnrazi/HackReactor/SDC/data/reviews.csv'
+FROM '/Users/johnrazi/HackReactor/data/reviews.csv'
 DELIMITER ',' CSV Header;
 
 COPY characteristics
-FROM '/Users/johnrazi/HackReactor/SDC/data/characteristics.csv'
+FROM '/Users/johnrazi/HackReactor/data/characteristics.csv'
 DELIMITER ',' CSV Header;
 
 COPY photos
-FROM '/Users/johnrazi/HackReactor/SDC/data/reviews_photos.csv'
+FROM '/Users/johnrazi/HackReactor/data/reviews_photos.csv'
 DELIMITER ',' CSV Header;
 
 update Reviews set date = date/1000;

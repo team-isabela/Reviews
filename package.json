@@ -1,0 +1,31 @@
+{
+  "name": "reviews_database",
+  "version": "1.1.0",
+  "description": "Reviews Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dropdb": "dropdb --if-exists SDC",
+    "createdb": "createdb 'SDC' && psql -h 127.0.0.1 -d SDC -f ./schema.sql",
+    "loaddb": "psql -h 127.0.0.1 -d SDC -f ./CopyData.sql",
+    "initializedb": "npm run dropdb && npm run createdb && npm run loaddb",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-isabela/Reviews.git"
+  },
+  "author": "John Razi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "git+https://github.com/team-isabela/Reviews/issues"
+  },
+  "homepage": "git+https://github.com/team-isabela/Reviews#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv": "^6.0.5",
+    "csv-generate": "^4.0.4",
+    "express": "^4.17.2",
+    "pg": "^8.7.1"
+  }
+}

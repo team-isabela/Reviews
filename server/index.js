@@ -39,7 +39,7 @@ app.get(/meta/, (req, res) => {
         'id', Crev.characteristic_id,
         'value', AVG(Crev.value)
       )
-    ) characteristics
+    ) "characteristics"
     FROM Reviews R
     JOIN Characteristic_Reviews Crev
     ON R.review_id = Crev.review_id

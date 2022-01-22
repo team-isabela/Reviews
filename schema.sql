@@ -1,7 +1,7 @@
 --Postgres Schema
 
 CREATE TABLE Reviews (
- review_id BIGSERIAL NOT NULL AUTOINCREMENT,
+ review_id BIGSERIAL NOT NULL,
  product_id INTEGER,
  rating INTEGER,
  date BIGINT,
@@ -19,7 +19,7 @@ CREATE INDEX pro_id ON Reviews (product_id);
 ALTER TABLE Reviews ADD CONSTRAINT Reviews_pkey PRIMARY KEY (review_id);
 
 CREATE TABLE Photos (
- photo_id BIGSERIAL NOT NULL AUTOINCREMENT,
+ photo_id BIGSERIAL NOT NULL,
  review_id INTEGER,
  url VARCHAR(1000)
 );
@@ -28,7 +28,7 @@ CREATE INDEX rev_id ON Photos (review_id);
 ALTER TABLE Photos ADD CONSTRAINT Photos_pkey PRIMARY KEY (photo_id);
 
 CREATE TABLE Characteristic_Reviews (
- char_rev_id BIGSERIAL NOT NULL AUTOINCREMENT,
+ char_rev_id BIGSERIAL NOT NULL,
  characteristic_id INTEGER,
  review_id INTEGER,
  value INTEGER
@@ -38,7 +38,7 @@ CREATE INDEX char_rev_id ON Characteristic_Reviews (review_id);
 ALTER TABLE Characteristic_Reviews ADD CONSTRAINT Characteristic_Reviews_pkey PRIMARY KEY (char_rev_id);
 
 CREATE TABLE Characteristics (
- char_id BIGSERIAL NOT NULL AUTOINCREMENT,
+ char_id BIGSERIAL NOT NULL,
  product_id INTEGER,
  name VARCHAR(30)
 );
